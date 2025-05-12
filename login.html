@@ -2,36 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Login - MU Portal</title>
-    <link href="Content/bootstrap.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(to right, #007bff, #00c6ff);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .login-box {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .form-control {
-            margin-bottom: 15px;
-        }
-    </style>
+    <title>Student Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-box">
+    <div class="container">
         <h2>Student Login</h2>
-        <input type="text" class="form-control" placeholder="Student ID">
-        <input type="password" class="form-control" placeholder="Password">
-        <a href="index.html" class="btn btn-primary btn-block">Login</a>
+        <input type="text" id="studentId" placeholder="Student ID">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="message" style="color:red;"></p>
     </div>
+
+    <script>
+        function login() {
+            const studentId = document.getElementById('studentId').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const message = document.getElementById('message');
+
+            if (!studentId || !password) {
+                message.textContent = 'Please enter both Student ID and Password.';
+                return;
+            }
+
+            if (studentId === '26188' && password === 'pass123') {
+                window.location.href = 'subjects.html';
+            } else {
+                message.textContent = 'Invalid Student ID or Password.';
+            }
+        }
+    </script>
 </body>
 </html>
