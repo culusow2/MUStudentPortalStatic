@@ -5,10 +5,32 @@
   <title>Subjects - MU Student Portal</title>
   <link rel="stylesheet" href="Content/bootstrap.css" />
   <link rel="stylesheet" href="Content/style.css" />
+  <style>
+    .logout-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff4f5a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .logout-btn:hover {
+      background-color: #e63a45;
+    }
+  </style>
   <script>
     if (!localStorage.getItem("loggedInStudent")) {
       alert("You must log in first.");
       window.location.href = "Login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedInStudent");
+      window.location.href = "index.html";
     }
   </script>
 </head>
@@ -33,6 +55,7 @@
 
     <div style="text-align:center; margin-top:30px;">
       <a href="index.html" class="btn btn-2">← Back to Home</a>
+      <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
   </div>
 
