@@ -3,55 +3,153 @@
 <head>
     <meta charset="utf-8" />
     <title>Subjects - MU Student Portal</title>
-    <link rel="stylesheet" href="../Content/bootstrap.css" />
-    <link rel="stylesheet" href="../Content/style.css" />
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <link rel="stylesheet" href="Content/style.css" />
+    <style>
+        body {
+            background: linear-gradient(to right, #1a2e35 50%, #1cbbb4 50%);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .subject-heading {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 40px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .subject-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            width: 280px;
+            text-align: center;
+        }
+
+        .card h5 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1a2e35;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #444;
+        }
+
+        .card .btn-1,
+        .card .btn-2 {
+            display: block;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .card .btn-1 {
+            background-color: #ff4f5a;
+            color: #fff;
+        }
+
+        .card .btn-1:hover {
+            background-color: #e63a45;
+        }
+
+        .card .btn-2 {
+            background-color: #1cbbb4;
+            color: #fff;
+        }
+
+        .card .btn-2:hover {
+            background-color: #17a2a0;
+        }
+
+        .back-home {
+            display: block;
+            margin: 50px auto 0;
+            text-align: center;
+            background-color: #ffffff;
+            color: #1a2e35;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-home:hover {
+            background-color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 90%;
+            }
+
+            .subject-heading {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
-<body class="hero_area">
-    <div class="layout_padding">
-        <h2 class="text-white">Available Subjects</h2>
-        <div class="subject-container">
-            <div class="card">
-                <h5>Java 2</h5>
-                <p>Start revising Java programming fundamentals and OOP concepts.</p>
-                <a href="Java2Revision.html" class="btn btn-1">Start Revision</a>
-                <a href="../Resources/Java2_QA.pdf" class="btn btn-2" target="_blank">View Q&A PDF</a>
-            </div>
-            <div class="card">
-                <h5>DCCN</h5>
-                <p>Review Data Communication & Computer Networks materials.</p>
-                <a href="DCCNRevision.html" class="btn btn-1">Start Revision</a>
-                <a href="../Resources/DCCN_QA.pdf" class="btn btn-2" target="_blank">View Q&A PDF</a>
-            </div>
-            <div class="card">
-                <h5>Algorithm</h5>
-                <p>Revise algorithm design techniques and examples.</p>
-                <a href="AlgorithmRevision.html" class="btn btn-1">Start Revision</a>
-                <a href="../Resources/Algorithm_QA.pdf" class="btn btn-2" target="_blank">View Q&A PDF</a>
-            </div>
-            <div class="card">
-                <h5>Principle of Accounting</h5>
-                <p>Brush up on balance sheets, journals, and financial statements.</p>
-                <a href="AccountingRevision.html" class="btn btn-1">Start Revision</a>
-                <a href="../Resources/Accounting_QA.pdf" class="btn btn-2" target="_blank">View Q&A PDF</a>
-            </div>
-            <div class="card">
-                <h5>Research</h5>
-                <p>Learn about research methods and proposal writing.</p>
-                <a href="ResearchRevision.html" class="btn btn-1">Start Revision</a>
-                <a href="../Resources/Research_QA.pdf" class="btn btn-2" target="_blank">View Q&A PDF</a>
-            </div>
-            <div class="card">
-                <h5>C# Programming</h5>
-                <p>Explore C# syntax, OOP concepts, and ASP.NET basics.</p>
-                <a href="CSharpRevision.html" class="btn btn-1">Start Revision</a>
-                <a href="../Resources/CSharp_QA.pdf" class="btn btn-2" target="_blank">View Q&A PDF</a>
-            </div>
+<body>
+    <h2 class="subject-heading">Available Subjects</h2>
+    <div class="subject-container">
+        <!-- Subject Cards -->
+        <div class="card">
+            <h5>Java 2</h5>
+            <p>Start revising Java programming fundamentals and OOP concepts.</p>
+            <a href="Java2Revision.html" class="btn-1">Start Revision</a>
+            <a href="Resources/Java2_QA.pdf" class="btn-2" target="_blank">View Q&A PDF</a>
         </div>
-        <div style="text-align:center; margin-top:30px;">
-            <a href="index.html" class="btn btn-2">Back to Home</a>
+        <div class="card">
+            <h5>DCCN</h5>
+            <p>Review Data Communication & Computer Networks materials.</p>
+            <a href="DCCNRevision.html" class="btn-1">Start Revision</a>
+            <a href="Resources/DCCN_QA.pdf" class="btn-2" target="_blank">View Q&A PDF</a>
+        </div>
+        <div class="card">
+            <h5>Algorithm</h5>
+            <p>Revise algorithm design techniques and examples.</p>
+            <a href="AlgorithmRevision.html" class="btn-1">Start Revision</a>
+            <a href="Resources/Algorithm_QA.pdf" class="btn-2" target="_blank">View Q&A PDF</a>
+        </div>
+        <div class="card">
+            <h5>Principle of Accounting</h5>
+            <p>Brush up on balance sheets, journals, and financial statements.</p>
+            <a href="AccountingRevision.html" class="btn-1">Start Revision</a>
+            <a href="Resources/Accounting_QA.pdf" class="btn-2" target="_blank">View Q&A PDF</a>
+        </div>
+        <div class="card">
+            <h5>Research</h5>
+            <p>Learn about research methods and proposal writing.</p>
+            <a href="ResearchRevision.html" class="btn-1">Start Revision</a>
+            <a href="Resources/Research_QA.pdf" class="btn-2" target="_blank">View Q&A PDF</a>
+        </div>
+        <div class="card">
+            <h5>C# Programming</h5>
+            <p>Explore C# syntax, OOP concepts, and ASP.NET basics.</p>
+            <a href="CSharpRevision.html" class="btn-1">Start Revision</a>
+            <a href="Resources/CSharp_QA.pdf" class="btn-2" target="_blank">View Q&A PDF</a>
         </div>
     </div>
-    <script src="../Scripts/jquery-3.4.1.min.js"></script>
-    <script src="../Scripts/bootstrap.js"></script>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
 </body>
 </html>
