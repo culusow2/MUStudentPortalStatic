@@ -88,11 +88,17 @@
             event.preventDefault();
             const studentId = document.getElementById('studentId').value.trim();
             const password = document.getElementById('password').value.trim();
+            const errorBox = document.getElementById('error-message');
 
-            if (studentId === "26188" && password === "pass123") {
+            // Simulated login
+            const validId = "26188";
+            const validPass = "pass123";
+
+            if (studentId === validId && password === validPass) {
+                localStorage.setItem("loggedInStudent", studentId);
                 window.location.href = "Subjects.html";
             } else {
-                document.getElementById('error-message').innerText = "Invalid Student ID or Password.";
+                errorBox.innerText = "Invalid Student ID or Password.";
             }
         });
     </script>
