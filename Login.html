@@ -5,26 +5,89 @@
     <title>Student Login - MU Student Portal</title>
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link rel="stylesheet" href="Content/style.css" />
+    <style>
+        body {
+            background: linear-gradient(to right, #1a2e35 50%, #1cbbb4 50%);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #1a2e35;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .btn-login {
+            background-color: #ff4f5a;
+            border: none;
+            color: #fff;
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-login:hover {
+            background-color: #e63a45;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background: #1a2e35;
+                padding: 20px;
+            }
+
+            .login-container {
+                box-shadow: none;
+            }
+        }
+    </style>
 </head>
-<body class="hero_area">
-    <div class="layout_padding">
-        <div class="login-card">
-            <h2>Student Login</h2>
-            <form id="loginForm">
-                <input type="text" id="studentId" name="studentId" class="form-control" placeholder="Student ID" required>
-                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-                <button type="submit" class="btn btn-1">Login</button>
-                <div id="error-message" class="error-message"></div>
-            </form>
-        </div>
+<body>
+    <div class="login-container">
+        <h2>Student Login</h2>
+        <form id="loginForm">
+            <input type="text" id="studentId" name="studentId" class="form-control" placeholder="Student ID" required>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <button type="submit" class="btn btn-login">Login</button>
+            <div id="error-message" class="error-message"></div>
+        </form>
     </div>
+
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
             event.preventDefault();
-            const studentId = document.getElementById('studentId').value;
-            const password = document.getElementById('password').value;
+            const studentId = document.getElementById('studentId').value.trim();
+            const password = document.getElementById('password').value.trim();
 
             if (studentId === "26188" && password === "pass123") {
                 window.location.href = "Subjects.html";
